@@ -7,7 +7,7 @@ class Chef < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true # only allow nil in updates, not on create.
   
-  has_many :recipes
+  has_many :recipes, dependent: :destroy # all associated recipes will be destroyed.
   has_secure_password
   
 end
