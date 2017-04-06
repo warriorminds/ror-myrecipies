@@ -8,6 +8,8 @@ class Chef < ApplicationRecord
   validates :password, presence: true, length: { minimum: 5 }, allow_nil: true # only allow nil in updates, not on create.
   
   has_many :recipes, dependent: :destroy # all associated recipes will be destroyed.
+  has_many :comments, dependent: :destroy
+  
   has_secure_password
   
 end
