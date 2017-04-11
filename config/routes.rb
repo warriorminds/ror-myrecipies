@@ -18,4 +18,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   
   resources :ingredients, except: [:destroy]
+  
+  get '/chat', to: 'chatrooms#show'
+  
+  resources :messages, only: [:create]
+  
 end

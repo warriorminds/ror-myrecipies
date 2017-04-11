@@ -9,6 +9,7 @@ class Chef < ApplicationRecord
   
   has_many :recipes, dependent: :destroy # all associated recipes will be destroyed.
   has_many :comments, dependent: :destroy
+  has_many :messages, dependent: :destroy
   
   has_secure_password
   
