@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # get "/recipes/:id", to: "recipes#show", as: :recipe
   resources :recipes do
     resources :comments, only: [:create]
+    member do 
+      post 'like'
+    end
   end
   
   get '/signup', to: "chefs#new"
